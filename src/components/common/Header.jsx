@@ -17,8 +17,8 @@ export const Header = () => {
           <div
             className={
               responsive
-                ? "nav flex space-x-4 max-md:hidden"
-                : "flex flex-col items-center absolute top-[10vh] w-[77%] bg-headingColor md:hidden left-[12%] my-2 rounded-lg"
+                ? "flex flex-col items-center absolute top-[10vh] w-[77%] bg-headingColor md:hidden left-[12%] my-2 rounded-lg"
+                : "nav flex space-x-4 max-md:hidden"
             }
           >
             {navlink.map((val, i) => (
