@@ -1,5 +1,6 @@
 import React from "react";
 import { Header } from "../common/Header";
+import { Home } from "../home/Home";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 export const Pages = () => {
@@ -8,8 +9,7 @@ export const Pages = () => {
       <Router>
         <Header />
         <Switch>
-          <Route path="/about"></Route>
-          <Route path="/users"></Route>
+          <Route exact path='/' component={Home}/>
         </Switch>
       </Router>
     </div>

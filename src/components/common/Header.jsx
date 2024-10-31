@@ -9,7 +9,7 @@ export const Header = () => {
 
   return (
     <div>
-      <header className="bg-gray-100 p-4">
+      <header className="bg-gray-100 p-4 z-[999]">
         <div className="container flex justify-between items-center mx-auto">
           <div className="logo">
             <img src={logo} alt="Logo" className="h-10 w-auto" />
