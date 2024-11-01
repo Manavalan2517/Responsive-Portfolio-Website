@@ -5,7 +5,7 @@ import homeBg from '../data/images/homeBg.png';
 
 export const Hero = () => {
   return (
-    <div className="hero relative h-[90vh] flex items-center">
+    <div className="hero relative h-screen flex items-center">
       <div
         className="absolute top-0 left-0 w-full h-full bg-no-repeat bg-cover z-[1]"
         style={{ backgroundImage: `url(${homeBg})` }}

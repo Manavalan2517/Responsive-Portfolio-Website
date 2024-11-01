@@ -9,7 +9,7 @@ export const Header = () => {
 
   return (
     <div>
-      <header className="bg-gray-100 p-4 z-[999]">
+      <header className="bg-gray-100 p-4 z-[99]">
         <div className="container flex justify-between items-center mx-auto">
           <div className="logo">
             <img src={logo} alt="Logo" className="h-10 w-auto" />
@@ -17,15 +17,15 @@ export const Header = () => {
           <div
             className={
               responsive
-                ? "flex flex-col items-center absolute top-[10vh] w-[77%] bg-headingColor md:hidden left-[12%] my-2 rounded-lg"
-                : "nav flex space-x-4 max-md:hidden"
+                ? "flex flex-col border-primaryColor border-[1px] items-center absolute top-[10vh] w-[77%] bg-headingColor md:hidden left-[12%] my-2 rounded-lg z-[100]"
+                : "nav flex space-x-2 max-md:hidden"
             }
           >
             {navlink.map((val, i) => (
               <Link
                 to={val.url}
                 key={i}
-                className="text-gray-700 no-underline transition duration-500 hover:text-gray-900 max-md:my-4"
+                className="flex text-gray-700 no-underline transition duration-500 hover:text-primaryColor max-md:my-1 px-[20px] justify-center rounded-xl w-full py-4 hover:bg-primaryBackground"
               >
                 {val.text}
               </Link>
