@@ -8,7 +8,7 @@ import { Testimonials } from "../pages/Testimonials";
 import { Blog } from "../pages/Blog";
 import { Contact } from "../pages/Contact";
 import { Footer } from "../common/Footer";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 export const Pages = () => {
   return (
