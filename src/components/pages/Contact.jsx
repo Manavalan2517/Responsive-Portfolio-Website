@@ -101,7 +101,7 @@ export const Contact = () => {
                   >
                     <i className="text-primaryColor text-2xl">{val.icon}</i>
                     <div>
-                      <p className="text-gray-600">{val.text1}</p>
+                      <p className="text-gray-400">{val.text1}</p>
                       <p className="text-gray-400">{val.text2}</p>
                     </div>
                   </motion.div>

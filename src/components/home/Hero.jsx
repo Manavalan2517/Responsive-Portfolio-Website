@@ -17,7 +17,7 @@ export const Hero = () => {
           key={i}
         >
           <motion.h3
-            className="mb-3 md:mb-5 font-semibold text-lg md:text-xl text-gray-700"
+            className="mb-3 md:mb-5 font-semibold text-lg md:text-xl text-gray-200"
             initial={{ opacity: 0, y: 20 }} // Start off invisible and slightly moved down
             animate={{ opacity: 1, y: 0 }} // Animate to visible and normal position
             transition={{ duration: 0.5, delay: i * 0.5 }} // Stagger animations based on index
@@ -39,23 +39,16 @@ export const Hero = () => {
             />
           </motion.h1>
           <motion.p
-            className="mb-6 md:mb-10 text-sm sm:text-base md:text-lg text-gray-600 px-4 md:px-0"
+            className="mb-6 md:mb-10 text-sm sm:text-base md:text-lg text-gray-400 px-4 md:px-0"
             initial={{ opacity: 0, y: 20 }} // Start off invisible and slightly moved down
             animate={{ opacity: 1, y: 0 }} // Animate to visible and normal position
             transition={{ duration: 0.5, delay: (i + 2) * 0.5 }} // Stagger animations based on index
           >
             {val.desc}
           </motion.p>
-          <motion.button
-            className="ease-in-out hover:-translate-y-1 primaryBtn bg-none border-[2px] border-primaryColor hover:bg-primaryColor px-6 py-2 md:px-8 md:py-3 rounded-xl text-sm sm:text-base md:text-lg"
-            initial={{ opacity: 0, scale: 0.5 }} // Start off invisible and scaled down
-            animate={{ opacity: 1, scale: 1 }} // Animate to visible and normal size
-            transition={{ duration: 0.5, delay: (i + 3) * 0.5 }} // Stagger animations based on index
-            whileHover={{ scale: 1.1 }} // Scale up on hover
-            whileTap={{ scale: 0.95 }} // Scale down on click
-          >
+          <button className="transition ease-in-out transform hover:-translate-y-1 hover:scale-105 duration-300 primaryBtn bg-primaryColor border-2 border-primaryColor hover:cursor-pointer text-white px-6 py-3 rounded-xl">
             Download CV
-          </motion.button>
+          </button>
         </div>
       ))}
     </div>

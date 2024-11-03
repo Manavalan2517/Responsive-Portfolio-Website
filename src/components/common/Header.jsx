@@ -32,7 +32,7 @@ export const Header = () => {
   return (
     <div>
       <header
-        className={`bg-gray-100 p-4 fixed top-0 left-0 w-screen z-[9999] shadow-md transition-transform duration-300 rounded-b-full max-md:rounded-b-3xl border-primaryColor border-b-2 border-solid ${
+        className={`bg-primaryBackground p-4 fixed top-0 left-0 w-screen z-[9999] shadow-md transition-transform duration-300 rounded-b-full max-md:rounded-b-3xl border-primaryColor border-b-2 border-solid ${
           isVisible ? "transform translate-y-0" : "transform -translate-y-full"
         }`}
       >
@@ -60,7 +60,7 @@ export const Header = () => {
               >
                 <Link
                   to={val.url}
-                  className="flex text-gray-700 no-underline transition duration-500 hover:text-primaryColor px-[20px] justify-center rounded-xl w-full py-4 hover:bg-primaryBackground"
+                  className="flex text-gray-200 no-underline transition duration-500 hover:text-primaryColor px-[20px] justify-center rounded-xl w-full py-4 hover:bg-black"
                 >
                   {val.text}
                 </Link>

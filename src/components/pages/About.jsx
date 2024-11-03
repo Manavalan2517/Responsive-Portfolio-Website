@@ -57,10 +57,10 @@ export const About = () => {
                     transition={{ duration: 0.7 }} // Animation duration
                   >
                     <Heading title="About me" />
-                    <p className="leading-7 md:leading-8 text-gray-700">
+                    <p className="leading-7 md:leading-8 text-gray-400">
                       {val.desc}
                     </p>
-                    <p className="leading-7 md:leading-8 text-gray-700">
+                    <p className="leading-7 md:leading-8 text-gray-400">
                       {val.desc1}
                     </p>
 
