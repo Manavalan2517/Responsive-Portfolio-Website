@@ -6,7 +6,7 @@ import { InView } from "react-intersection-observer"; // Import InView
 
 export const Blog = () => {
   return (
-    <div className="flex justify-center items-center h-screen py-20 max-md:mx-5 max-md:pt-36">
+    <div className="flex justify-center items-center xl:h-screen py-20 max-md:mx-5 max-md:pt-36">
       <div className="container">
         <Heading title="Blog" />
         <div className="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center place-items-center">
