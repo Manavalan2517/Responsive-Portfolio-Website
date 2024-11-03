@@ -1,6 +1,8 @@
 import React from "react";
 import { Heading } from "../common/Heading";
 import { services } from "../data/dummyData";
+import { motion } from "framer-motion"; // Import motion from framer-motion
+import { InView } from "react-intersection-observer"; // Import InView
 
 export const Services = () => {
   return (
@@ -9,16 +11,29 @@ export const Services = () => {
         <Heading title="Services" />
         <div className="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((val, i) => (
-            <div
-              key={i} // Add key for each item in the list
-              className="box bg-primaryBackground p-6 rounded-xl hover:shadow-lg transition-shadow duration-300"
-            >
-              <i className="text-primaryColor text-3xl" aria-hidden="true">
-                {val.icon}
-              </i>
-              <h3 className="mt-5 text-lg font-semibold">{val.title}</h3>
-              <h3 className="text-greyDark text-sm">{val.desc}</h3>
-            </div>
+            <InView key={i} threshold={0.2} triggerOnce={false}>
+              {({ ref, inView }) => (
+                <motion.div
+                  ref={ref}
+                  className="box bg-primaryBackground p-6 rounded-xl hover:shadow-lg transition-shadow duration-300"
+                  initial={{ opacity: 0, y: 50 }} // Start off screen with reduced opacity
+                  animate={
+                    inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
+                  } // Animate to visible
+                  transition={{
+                    duration: 0.6,
+                    ease: "easeOut",
+                    delay: i * 0.2,
+                  }} // Staggered animation by index
+                >
+                  <i className="text-primaryColor text-3xl" aria-hidden="true">
+                    {val.icon}
+                  </i>
+                  <h3 className="mt-5 text-lg font-semibold">{val.title}</h3>
+                  <h3 className="text-greyDark text-sm">{val.desc}</h3>
+                </motion.div>
+              )}
+            </InView>
           ))}
         </div>
       </div>

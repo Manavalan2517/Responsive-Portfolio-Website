@@ -2,6 +2,8 @@ import React from "react";
 import { project } from "../data/dummyData";
 import homeBg from "../data/images/homeBg.png";
 import CountUp from "react-countup";
+import { InView } from "react-intersection-observer"; // Import InView
+import { motion } from "framer-motion"; // Import motion from framer-motion
 
 export const Counter = () => {
   return (
@@ -11,13 +13,27 @@ export const Counter = () => {
     >
       <div className="container relative grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 place-items-center text-center px-4">
         {project.map((val, i) => (
-          <div key={i} className="box flex flex-col items-center gap-3">
-            <i className="text-4xl mb-4">{val.icon}</i>
-            <h1 className="text-primaryColor text-5xl sm:text-6xl md:text-7xl font-bold">
-              <CountUp enableScrollSpy duration={2} end={val.num} />
-            </h1>
-            <h3 className="text-base sm:text-lg md:text-xl">{val.title}</h3>
-          </div>
+          <InView key={i} triggerOnce={false}>
+            {({ ref, inView }) => (
+              <motion.div
+                ref={ref}
+                className="box flex flex-col items-center gap-3"
+                initial={{ opacity: 0, y: 30 }} // Start slightly lower with no opacity
+                animate={inView ? { opacity: 1, y: 0 } : {}} // Animate to visible and move to original position
+                transition={{ duration: 0.5, delay: i * 0.2 }} // Stagger animations for each counter
+              >
+                <i className="text-4xl mb-4">{val.icon}</i>
+                <h1 className="text-primaryColor text-5xl sm:text-6xl md:text-7xl font-bold">
+                  {inView ? (
+                    <CountUp duration={2} end={val.num} />
+                  ) : (
+                    0 // Display 0 until in view
+                  )}
+                </h1>
+                <h3 className="text-base sm:text-lg md:text-xl">{val.title}</h3>
+              </motion.div>
+            )}
+          </InView>
         ))}
       </div>
     </div>
