@@ -23,13 +23,17 @@ export const Header = () => {
   return (
     <div>
       <header
-        className={`bg-gray-100 p-4 fixed top-0 left-0 w-full z-[9999] shadow-md transition-transform duration-300 rounded-b-full border-primaryColor border-b-2 border-solid${
+        className={`bg-gray-100 p-4 fixed top-0 left-0 w-full z-[9999] shadow-md transition-transform duration-300 rounded-b-full max-md:rounded-b-3xl border-primaryColor border-b-2 border-solid${
           isVisible ? "transform translate-y-0" : "transform -translate-y-full"
         }`}
       >
         <div className="container flex justify-between items-center mx-auto">
           <div className="logo">
-            <img src={logo} alt="Logo" className="h-10 w-auto" />
+            <img
+              src={logo}
+              alt="Logo"
+              className="h-10 w-auto max-md:h-7 max-md:pl-5 max-md:pb-1"
+            />
           </div>
           <div
             className={
