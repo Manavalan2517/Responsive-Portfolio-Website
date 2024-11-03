@@ -7,6 +7,7 @@ import { Portfolio } from "../pages/Portfolio";
 import { Testimonials } from "../pages/Testimonials";
 import { Blog } from "../pages/Blog";
 import { Contact } from "../pages/Contact";
+import { Footer } from "../common/Footer";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 export const Pages = () => {
@@ -23,6 +24,7 @@ export const Pages = () => {
           <Route exact path="/blog" component={Blog} />
           <Route exact path="/contact" component={Contact} />
         </Switch>
+        <Footer />
       </Router>
     </div>
   );

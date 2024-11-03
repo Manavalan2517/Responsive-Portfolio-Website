@@ -25,7 +25,7 @@ export const Portfolio = () => {
   };
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex pt-16 items-center justify-center">
       <article className="mt-[70px] mb-[80px] transition">
         <div className="container w-[80%] pt-10 mx-auto transition">
           <Heading title="Portfolio" />
