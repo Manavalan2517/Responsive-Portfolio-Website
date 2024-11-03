@@ -1,7 +1,25 @@
-import React from 'react'
+import React from "react";
+import { project } from "../data/dummyData";
+import homeBg from "../data/images/homeBg.png";
+import CountUp from "react-countup";
 
 export const Counter = () => {
   return (
-    <div>Counter</div>
-  )
-}
+    <div
+      className="relative flex items-center justify-center mt-20 bg-fixed bg-center bg-no-repeat bg-cover h-[50vh]"
+      style={{ backgroundImage: `url(${homeBg})` }}
+    >
+      <div className="container relative grid grid-cols-4 gap-8 place-items-center text-center">
+        {project.map((val, i) => (
+          <div key={i} className="box flex flex-col items-center gap-3">
+            <i className="text-4xl mb-4">{val.icon}</i>
+            <h1 className="text-primaryColor text-7xl font-bold">
+              <CountUp enableScrollSpy duration={2} end={val.num}/>
+            </h1>
+            <h3 className="text-xl">{val.title}</h3>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};

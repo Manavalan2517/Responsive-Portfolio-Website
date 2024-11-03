@@ -15,8 +15,8 @@ export const About = () => {
               </div>
               <div className="right w-[65%]">
                 <Heading title="About me" />
-                <p className="mb-5 leading-8">{val.desc}</p>
-                <p className="mb-10 leading-8">{val.desc1}</p>
+                <p className="mb-5 leading-8 text-greyDark">{val.desc}</p>
+                <p className="mb-10 leading-8 text-greyDark">{val.desc1}</p>
                 <div className="flex justify-center">
                   <button className="mr-6 ease-in-out transition hover:-translate-y-1 hover:scale-105 duration-300 primaryBtn bg-primaryColor border-[2px] border-primaryColor hover:bg-transparent  px-4 py-2 rounded-xl">
                     Download CV

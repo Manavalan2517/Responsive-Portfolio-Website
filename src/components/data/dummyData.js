@@ -18,6 +18,21 @@ import {
   YouTube,
 } from "@mui/icons-material";
 
+import port1 from "../port/port1.jpg";
+import port2 from "../port/port2.jpg";
+import port3 from "../port/port3.jpg";
+import port4 from "../port/port4.jpg";
+import port5 from "../port/port5.jpg";
+import port6 from "../port/port6.jpg";
+
+import team_1 from "../testimonialImg/team-1.png";
+import team_2 from "../testimonialImg/team-2.png";
+import team_3 from "../testimonialImg/team-3.png";
+
+import b1 from "../blogImg/b1.png";
+import b2 from "../blogImg/b2.png";
+import b3 from "../blogImg/b3.png";
+
 export const navlink = [
   {
     url: "/",
@@ -132,42 +147,42 @@ export const project = [
 export const portfolio = [
   {
     id: 1,
-    cover: "../images/port/port1.jpg",
+    cover: port1,
     name: "Brand",
     category: "marketing",
     title: "Brex Logo",
   },
   {
     id: 2,
-    cover: "../images/port/port2.jpg",
+    cover: port2,
     name: "Brand",
     category: "design",
     title: "Brex Logo",
   },
   {
     id: 3,
-    cover: "../images/port/port3.jpg",
+    cover: port3,
     name: "Brand",
     category: "development",
     title: "Brex Logo",
   },
   {
     id: 4,
-    cover: "../images/port/port4.jpg",
+    cover: port4,
     name: "Brand",
     category: "marketing",
     title: "Brex Logo",
   },
   {
     id: 5,
-    cover: "../images/port/port5.jpg",
+    cover: port5,
     name: "Brand",
     category: "design",
     title: "Brex Logo",
   },
   {
     id: 6,
-    cover: "../images/port/port6.jpg",
+    cover: port6,
     name: "Brand",
     category: "development",
     title: "Brex Logo",
@@ -177,21 +192,21 @@ export const testimonials = [
   {
     id: 1,
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porttitordapibus dictum.Fusce faucibus ligula scelerisque, eleifend turpis in",
-    image: "./images/testimonials/team-1.png",
+    image: team_1,
     name: "Alamin Musa",
     post: "Front End Developer",
   },
   {
     id: 2,
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porttitordapibus dictum.Fusce faucibus ligula scelerisque, eleifend turpis in",
-    image: "./images/testimonials/team-2.png",
+    image: team_2,
     name: "Alex Ander",
     post: "Back End Developer",
   },
   {
     id: 3,
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porttitordapibus dictum.Fusce faucibus ligula scelerisque, eleifend turpis in",
-    image: "./images/testimonials/team-3.png",
+    image: team_3,
     name: "GorkCoder",
     post: "React Developer",
   },
@@ -203,7 +218,7 @@ export const blog = [
     date: "Jun 27, 2022",
     author: "Dorian Gray",
     desc: "Lorem Ipsum has been standard. Lorem Ipsum is simply text of the printing and typesetting industry. Lorem Ipsum has been",
-    cover: "./images/blog/b1.png",
+    cover: b1,
   },
   {
     id: 2,
@@ -211,7 +226,7 @@ export const blog = [
     date: "Jun 27, 2022",
     author: "Dorian Gray",
     desc: "Lorem Ipsum has been standard. Lorem Ipsum is simply text of the printing and typesetting industry. Lorem Ipsum has been",
-    cover: "./images/blog/b2.png",
+    cover: b2,
   },
   {
     id: 3,
@@ -219,7 +234,7 @@ export const blog = [
     date: "Jun 27, 2022",
     author: "Dorian Gray",
     desc: "Lorem Ipsum has been standard. Lorem Ipsum is simply text of the printing and typesetting industry. Lorem Ipsum has been",
-    cover: "./images/blog/b3.png",
+    cover: b3,
   },
 ];
 export const contact = [
