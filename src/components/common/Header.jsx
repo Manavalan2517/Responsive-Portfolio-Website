@@ -101,7 +101,7 @@ export const Header = () => {
               >
                 <Link
                   to={val.url}
-                  className="flex text-gray-700 no-underline transition duration-500 hover:text-primaryColor max-md:my-1 px-[20px] justify-center rounded-xl w-full py-4 hover:bg-primaryBackground"
+                  className="flex text-gray-400 no-underline transition duration-500 hover:text-primaryColor max-md:my-1 px-[20px] justify-center rounded-xl w-full py-4 hover:bg-primaryBackground"
                   onClick={handleLinkClick}
                 >
                   {val.text}
