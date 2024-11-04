@@ -5,8 +5,8 @@ import homeBg from "../data/images/homeBg.png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { motion } from "framer-motion"; // Import Framer Motion
-import { InView } from "react-intersection-observer"; // Import InView
+import { motion } from "framer-motion";
+import { InView } from "react-intersection-observer";
 
 export const Testimonials = () => {
   const settings = {
@@ -37,11 +37,11 @@ export const Testimonials = () => {
                 <motion.div
                   key={i}
                   className="box text-center"
-                  initial={{ opacity: 0, y: 50 }} // Start with opacity 0 and below the viewport
+                  initial={{ opacity: 0, y: 50 }}
                   animate={
                     inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
-                  } // Animate in when inView
-                  exit={{ opacity: 0, y: -50 }} // Animate out when slide changes
+                  }
+                  exit={{ opacity: 0, y: -50 }}
                   transition={{ duration: 0.6 }}
                 >
                   <i className="bg-white text-[20px] p-[15px] m-[30px] inline-block text-primaryColor rounded-full shadow-md">

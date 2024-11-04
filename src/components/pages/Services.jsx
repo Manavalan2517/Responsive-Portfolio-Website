@@ -1,8 +1,8 @@
 import React from "react";
 import { Heading } from "../common/Heading";
 import { services } from "../data/dummyData";
-import { motion } from "framer-motion"; // Import motion from framer-motion
-import { InView } from "react-intersection-observer"; // Import InView
+import { motion } from "framer-motion";
+import { InView } from "react-intersection-observer";
 
 export const Services = () => {
   return (
@@ -16,15 +16,15 @@ export const Services = () => {
                 <motion.div
                   ref={ref}
                   className="box bg-primaryBackground p-6 rounded-xl hover:shadow-lg transition-shadow duration-300"
-                  initial={{ opacity: 0, y: 50 }} // Start off screen with reduced opacity
+                  initial={{ opacity: 0, y: 50 }}
                   animate={
                     inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
-                  } // Animate to visible
+                  }
                   transition={{
                     duration: 0.6,
                     ease: "easeOut",
                     delay: i * 0.2,
-                  }} // Staggered animation by index
+                  }}
                 >
                   <i className="text-primaryColor text-3xl" aria-hidden="true">
                     {val.icon}

@@ -5,7 +5,6 @@ import { Heading } from "../common/Heading";
 import { motion, AnimatePresence } from "framer-motion";
 import { InView } from "react-intersection-observer";
 
-// Generate a unique list of categories
 const allCategories = [
   "all",
   ...new Set(portfolio.map((item) => item.category)),
@@ -22,9 +21,8 @@ export const Portfolio = () => {
       const filteredItems = portfolio.filter(
         (item) => item.category === category
       );
-      // Set a short delay to allow for fade-out animation
-      setList([]); // Clear list temporarily to trigger exit animation
-      setTimeout(() => setList(filteredItems), 200); // Delay new items slightly
+      setList([]);
+      setTimeout(() => setList(filteredItems), 200);
     }
   };
 
@@ -59,7 +57,7 @@ export const Portfolio = () => {
                           ? { opacity: 1, scale: 1 }
                           : { opacity: 0, scale: 0.9 }
                       }
-                      exit={{ opacity: 0, scale: 0.9 }} // Fade out on exit
+                      exit={{ opacity: 0, scale: 0.9 }}
                       transition={{ duration: 0.5, delay: i * 0.2 }}
                     >
                       <div className="img w-full h-full">

@@ -1,8 +1,8 @@
 import React from "react";
 import { Heading } from "../common/Heading";
 import { blog } from "../data/dummyData";
-import { motion } from "framer-motion"; // Import motion from framer-motion
-import { InView } from "react-intersection-observer"; // Import InView
+import { motion } from "framer-motion";
+import { InView } from "react-intersection-observer";
 
 export const Blog = () => {
   return (
@@ -16,11 +16,11 @@ export const Blog = () => {
                 <motion.div
                   ref={ref}
                   className="box bg-primaryBackground rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-                  initial={{ opacity: 0, y: 50 }} // Start with opacity 0 and below the viewport
+                  initial={{ opacity: 0, y: 50 }}
                   animate={
                     inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
-                  } // Animate in when inView
-                  transition={{ duration: 0.5, delay: index * 0.1 }} // Staggered by index
+                  }
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   <div className="img">
                     <img
