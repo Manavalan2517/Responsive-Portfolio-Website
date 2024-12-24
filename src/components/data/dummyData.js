@@ -51,14 +51,6 @@ export const navlink = [
     text: "Portfolio",
   },
   {
-    url: "/testimonials",
-    text: "Testimonials",
-  },
-  {
-    url: "/blog",
-    text: "Blog",
-  },
-  {
     url: "/contact",
     text: "Contact",
   },
@@ -66,70 +58,67 @@ export const navlink = [
 export const home = [
   {
     text: "HELLO I'M",
-    name: "Your Name",
-    post: "Full Stack Developer",
-    design: "Data Scientist",
-    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+    name: "Manavalan",
+    post: "Web Developer",
+    design: "Full Stack Developer",
+    desc: "I am a passionate web developer skilled in creating interactive and responsive web applications. With a strong focus on clean code and modern design principles, I enjoy transforming ideas into functional and visually appealing digital experiences.",
   },
 ];
+
 export const about = [
   {
-    desc: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur",
+    desc: "I am Manavalan V, a first-year Data Science student at SRM University, passionate about leveraging technology to solve real-world problems. With a strong foundation in Python, Java, SQL, and JavaScript, I am committed to mastering data analysis, machine learning, and AI while honing my skills in full-stack web development.",
     desc1:
-      "magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor si voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur",
+      "Proficient in tools like React, TypeScript, and Tailwind, I enjoy building functional and user-friendly applications. My interests lie at the intersection of technology and innovation, and I am always eager to explore new opportunities, collaborate on projects, and deepen my expertise in data science and web development.",
     cover: "../data/images/man.png",
   },
 ];
+
 export const services = [
   {
     id: 1,
     icon: <Settings />,
     title: "Creative Design",
-    desc: "Lorem Ipsum simply text of the printing and type setting industry when an unknown printing simply",
+    desc: "Crafting visually appealing and innovative designs that prioritize user experience and aesthetic appeal.",
   },
   {
     id: 2,
     icon: <CropRotate />,
     title: "Clean Code",
-    desc: "Lorem Ipsum simply text of the printing and type setting industry when an unknown printing simply",
+    desc: "Writing well-structured, maintainable, and efficient code to ensure optimal performance and scalability.",
   },
   {
     id: 3,
     icon: <ViewInAr />,
     title: "Responsive Design",
-    desc: "Lorem Ipsum simply text of the printing and type setting industry when an unknown printing simply",
+    desc: "Building fully responsive designs that adapt seamlessly to any device, ensuring accessibility and usability.",
   },
   {
     id: 4,
     icon: <PieChart />,
-    title: "Material UI	",
-    desc: "Lorem Ipsum simply text of the printing and type setting industry when an unknown printing simply",
+    title: "Material UI",
+    desc: "Utilizing Material UI to create modern, consistent, and intuitive user interfaces with a professional touch.",
   },
   {
     id: 5,
     icon: <Code />,
     title: "Material UI Icons",
-    desc: "Lorem Ipsum simply text of the printing and type setting industry when an unknown printing simply",
+    desc: "Enhancing user interfaces with a diverse collection of high-quality Material UI icons for better visual communication.",
   },
   {
     id: 6,
     icon: <BarChart />,
     title: "Awesome Support",
-    desc: "Lorem Ipsum simply text of the printing and type setting industry when an unknown printing simply",
+    desc: "Providing exceptional support and assistance to ensure smooth project development and implementation.",
   },
 ];
+
 export const project = [
-  {
-    id: 1,
-    icon: <CloudOutlined />,
-    num: "89",
-    title: "HAPPY CLIENTS",
-  },
   {
     id: 2,
     icon: <FavoriteBorder />,
     num: "231",
-    title: "PROJECTS COMPLEATED",
+    title: "PROJECTS COMPLETED",
   },
   {
     id: 3,
@@ -147,45 +136,9 @@ export const project = [
 export const portfolio = [
   {
     id: 1,
-    cover: port1,
-    name: "Brand",
-    category: "marketing",
-    title: "Brex Logo",
-  },
-  {
-    id: 2,
-    cover: port2,
-    name: "Brand",
-    category: "design",
-    title: "Brex Logo",
-  },
-  {
-    id: 3,
-    cover: port3,
-    name: "Brand",
-    category: "development",
-    title: "Brex Logo",
-  },
-  {
-    id: 4,
-    cover: port4,
-    name: "Brand",
-    category: "marketing",
-    title: "Brex Logo",
-  },
-  {
-    id: 5,
-    cover: port5,
-    name: "Brand",
-    category: "design",
-    title: "Brex Logo",
-  },
-  {
-    id: 6,
-    cover: port6,
-    name: "Brand",
-    category: "development",
-    title: "Brex Logo",
+    title: "Ai-Learning Management System",
+    link: "https://github.com/Manavalan2517/ai-lms",
+    img: "/AI-LMS.png",
   },
 ];
 export const testimonials = [

@@ -1,87 +1,61 @@
-import { Visibility } from "@mui/icons-material";
+"use client";
 import { portfolio } from "../data/dummyData";
-import React, { useState } from "react";
-import { Heading } from "../common/Heading";
-import { motion, AnimatePresence } from "framer-motion";
-import { InView } from "react-intersection-observer";
-
-const allCategories = [
-  "all",
-  ...new Set(portfolio.map((item) => item.category)),
-];
+import { ChevronRight } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import CreativeBtn2 from "./CreativeBtn2";
 
 export const Portfolio = () => {
-  const [list, setList] = useState(portfolio);
-  const [categories] = useState(allCategories);
+  const [width, setWidth] = useState(0);
+  const carousel = useRef(null);
 
-  const filterItems = (category) => {
-    if (category === "all") {
-      setList(portfolio);
-    } else {
-      const filteredItems = portfolio.filter(
-        (item) => item.category === category
-      );
-      setList([]);
-      setTimeout(() => setList(filteredItems), 200);
-    }
-  };
+  useEffect(() => {
+    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+  }, []);
 
   return (
-    <div className="flex pt-16 items-center justify-center">
-      <article className="mt-[70px] mb-[80px] transition">
-        <div className="container w-[80%] pt-10 mx-auto transition">
-          <Heading title="Portfolio" />
-          <div className="catButton flex flex-wrap justify-center items-center my-10 max-md:grid max-md:grid-cols-2">
-            {categories.map((category, index) => (
-              <button
-                key={index}
-                className="capitalize primaryBtn ease-in-out w-[150px] max-md:w-[140px] sm:w-[200px] mr-4 mb-4 transition hover:-translate-y-1 hover:scale-105 duration-300 primaryBtn bg-none border-[2px] border-primaryColor hover:bg-primaryColor px-4 py-2 rounded-xl"
-                onClick={() => filterItems(category)}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-          <div className="content grid grid-cols-1 max-md:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center place-items-center">
-            <AnimatePresence>
-              {list.map((item, i) => (
-                <InView key={i} triggerOnce={false}>
-                  {({ ref, inView }) => (
-                    <motion.div
-                      ref={ref}
-                      key={item.title}
-                      className="box relative transition duration-500"
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={
-                        inView
-                          ? { opacity: 1, scale: 1 }
-                          : { opacity: 0, scale: 0.9 }
-                      }
-                      exit={{ opacity: 0, scale: 0.9 }}
-                      transition={{ duration: 0.5, delay: i * 0.2 }}
-                    >
-                      <div className="img w-full h-full">
-                        <img
-                          src={item.cover}
-                          alt={item.title}
-                          className="w-full h-full rounded-lg object-cover"
-                        />
-                      </div>
-                      <div className="overlay absolute inset-0 flex flex-col justify-center items-center opacity-0 hover:opacity-100 transition duration-500 bg-primaryColor cursor-pointer">
-                        <div className="text-white text-center">
-                          <h3>{item.title}</h3>
-                          <span>{item.name}</span> <br />
-                          <Visibility />
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </InView>
-              ))}
-            </AnimatePresence>
-          </div>
-        </div>
-      </article>
+    <div className="gap-4 max-md:pt-36 max-md:px-1 px-52 ">
+      <div className="w-full overflow-hidden">
+        <motion.div
+          ref={carousel}
+          drag="x"
+          whileDrag={{ scale: 0.95 }}
+          dragElastic={0.2}
+          dragConstraints={{ right: 0, left: -width }}
+          dragTransition={{ bounceDamping: 30 }}
+          transition={{ duration: 0.2, ease: "easeInOut" }}
+          className="flex will-change-transform cursor-grab active:cursor-grabbing"
+        >
+          {portfolio.map((item, index) => (
+            <motion.div key={index} className="min-w-[20rem] min-h-[25rem] p-2">
+              <div className="max-md:h-[450px] h-[450px] group mx-auto dark:bg-[#252525] p-4 bg-white dark:border-0 border overflow-hidden rounded-xl dark:text-white text-black">
+                <figure className="w-full h-80 group-hover:h-72 transition-all duration-300 dark:bg-[#0a121a] bg-[#f0f5fa] p-2 rounded-xl relative overflow-hidden">
+                  <div
+                    style={{
+                      background:
+                        "linear-gradient(123.9deg, #0B65ED 1.52%, rgba(0, 0, 0, 0) 68.91%)",
+                    }}
+                    className="absolute top-0 left-0 w-full h-full group-hover:opacity-100 opacity-0 transition-all duration-300"
+                  ></div>
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    width={600}
+                    height={600}
+                    className="absolute -bottom-1 group-hover:-bottom-5 right-0 h-64 w-[80%] group-hover:border-4 border-4 group-hover:border-[#76aaf82d] rounded-lg object-cover transition-all duration-300"
+                  />
+                </figure>
+                <article className="p-4 space-y-2">
+                  <h1 className="text-xl font-semibold capitalize">
+                    {item.title}
+                  </h1>
+                  <CreativeBtn2 link={item.link}/>
+                </article>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
     </div>
   );
 };
