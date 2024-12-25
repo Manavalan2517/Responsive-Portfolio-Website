@@ -55,7 +55,7 @@ export const about = [
     desc: "I am Manavalan V, a first-year Data Science student at SRM University, passionate about leveraging technology to solve real-world problems. With a strong foundation in Python, Java, SQL, and JavaScript, I am committed to mastering data analysis, machine learning, and AI while honing my skills in full-stack web development.",
     desc1:
       "Proficient in tools like React, TypeScript, and Tailwind, I enjoy building functional and user-friendly applications. My interests lie at the intersection of technology and innovation, and I am always eager to explore new opportunities, collaborate on projects, and deepen my expertise in data science and web development.",
-    cover: "../data/images/man.png",
+    cover: "/myPhoto.jpg",
   },
 ];
 

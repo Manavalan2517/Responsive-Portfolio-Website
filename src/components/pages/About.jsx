@@ -25,7 +25,7 @@ export const About = () => {
                     transition={{ duration: 0.7 }}
                   >
                     <img
-                      src={man}
+                      src={val.cover}
                       alt="Profile"
                       className="w-[60%] lg:w-full rounded-lg"
                     />
