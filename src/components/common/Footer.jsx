@@ -12,7 +12,6 @@ export const Footer = () => {
             ))}
           </div>
         </div>
-        <p className="text-greyDark">All Rights Resrved 2024</p>
       </footer>
     </div>
   );

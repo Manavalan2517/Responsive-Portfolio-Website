@@ -5,25 +5,10 @@ import {
   PieChart,
   Code,
   BarChart,
-  CloudOutlined,
   FavoriteBorder,
   Public,
   PersonOutlined,
-  AddLocationAltOutlined,
-  PhoneIphone,
-  EmailOutlined,
-  Facebook,
-  Twitter,
-  Instagram,
-  YouTube,
 } from "@mui/icons-material";
-
-import port1 from "../port/port1.jpg";
-import port2 from "../port/port2.jpg";
-import port3 from "../port/port3.jpg";
-import port4 from "../port/port4.jpg";
-import port5 from "../port/port5.jpg";
-import port6 from "../port/port6.jpg";
 
 import team_1 from "../testimonialImg/team-1.png";
 import team_2 from "../testimonialImg/team-2.png";
@@ -48,7 +33,7 @@ export const navlink = [
   },
   {
     url: "/portfolio",
-    text: "Portfolio",
+    text: "Projects",
   },
   {
     url: "/contact",
@@ -140,6 +125,24 @@ export const portfolio = [
     link: "https://github.com/Manavalan2517/ai-lms",
     img: "/AI-LMS.png",
   },
+  {
+    id: 2,
+    title: "Figma Clone",
+    link: "https://github.com/Manavalan2517/figma-clone",
+    img: "/figmaClone.png",
+  },
+  {
+    id: 3,
+    title: "Student Login and Register System",
+    link: "https://github.com/Manavalan2517/Student-Login-and-Register-System",
+    img: "/studentRegister.png",
+  },
+  {
+    id: 4,
+    title: "Obsidian Code Editor",
+    link: "https://github.com/Manavalan2517/Obsidian---Code-Editor",
+    img: "/Obsidian.png",
+  },
 ];
 export const testimonials = [
   {
@@ -192,32 +195,11 @@ export const blog = [
 ];
 export const contact = [
   {
-    icon: <AddLocationAltOutlined />,
-    text1: "2651 Main Street, Suit 124",
-    text2: "Seattle, WA, 98101",
-  },
-  {
-    icon: <PhoneIphone />,
-    text1: "0123456789",
-    text2: "0345627891",
-  },
-  {
-    icon: <EmailOutlined />,
-    text1: "hello@thetheme.io",
-    text2: "inf0@brex-theme.io",
-  },
+
+  }
 ];
 export const social = [
   {
-    icon: <Facebook />,
-  },
-  {
-    icon: <Twitter />,
-  },
-  {
-    icon: <Instagram />,
-  },
-  {
-    icon: <YouTube />,
-  },
+
+  }
 ];

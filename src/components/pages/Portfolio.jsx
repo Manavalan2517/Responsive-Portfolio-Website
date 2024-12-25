@@ -1,9 +1,9 @@
 "use client";
 import { portfolio } from "../data/dummyData";
-import { ChevronRight } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import CreativeBtn2 from "./CreativeBtn2";
+import { Heading } from "../common/Heading";
 
 export const Portfolio = () => {
   const [width, setWidth] = useState(0);
@@ -15,6 +15,7 @@ export const Portfolio = () => {
 
   return (
     <div className="gap-4 max-md:pt-36 max-md:px-1 px-52 ">
+      <Heading title="Projects" />
       <div className="w-full overflow-hidden">
         <motion.div
           ref={carousel}

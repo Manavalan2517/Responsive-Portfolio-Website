@@ -13,7 +13,7 @@ export const About = () => {
         <div className="container flex flex-col lg:flex-row lg:space-x-10 space-y-8 lg:space-y-0 items-center">
           {about.map((val, i) => (
             <React.Fragment key={i}>
-              <InView triggerOnce={false} onChange={(inView) => {}}>
+              <InView triggerOnce={false} onChange={(InView) => {}}>
                 {({ ref, inView }) => (
                   <motion.div
                     ref={ref}
