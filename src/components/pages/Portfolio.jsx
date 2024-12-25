@@ -14,7 +14,7 @@ export const Portfolio = () => {
   }, []);
 
   return (
-    <div className="gap-4 max-md:pt-36 max-md:px-1 px-52 ">
+    <div className="gap-4 max-md:pt-36 max-md:px-1 px-52 pt-36 flex flex-col items-center justify-center">
       <Heading title="Projects" />
       <div className="w-full overflow-hidden">
         <motion.div
@@ -50,7 +50,7 @@ export const Portfolio = () => {
                   <h1 className="text-xl font-semibold capitalize">
                     {item.title}
                   </h1>
-                  <CreativeBtn2 link={item.link}/>
+                  <CreativeBtn2 link={item.link} />
                 </article>
               </div>
             </motion.div>
