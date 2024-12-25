@@ -1,10 +1,123 @@
-import React from "react";
-import { Heading } from "../common/Heading";
-import { contact } from "../data/dummyData";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { InView } from "react-intersection-observer";
+import emailjs from "emailjs-com";
+import { Heading } from "../common/Heading";
+
+// Reusable InputField component
+const InputField = ({ type, placeholder, index, name, value, onChange }) => (
+  <InView triggerOnce>
+    {({ ref, inView }) => (
+      <>
+        {placeholder === "Message" ? (
+          <motion.textarea
+            ref={ref}
+            placeholder={placeholder}
+            rows="10"
+            className="w-full p-4 border border-gray-300 text-black rounded-lg outline-none focus:border-primaryColor"
+            aria-label={placeholder}
+            name={name}
+            value={value}
+            onChange={onChange}
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{
+              duration: 0.5,
+              delay: index * 0.2,
+            }}
+          />
+        ) : (
+          <motion.input
+            ref={ref}
+            placeholder={placeholder}
+            type={type}
+            className="w-full p-4 border border-gray-300 text-black rounded-lg outline-none focus:border-primaryColor"
+            aria-label={placeholder}
+            name={name}
+            value={value}
+            onChange={onChange}
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{
+              duration: 0.5,
+              delay: index * 0.2,
+            }}
+          />
+        )}
+      </>
+    )}
+  </InView>
+);
 
 export const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false); // For loading state
+
+  // Handle form data change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.subject ||
+      !formData.message
+    ) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    setLoading(true);
+
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+    };
+
+    emailjs
+      .send(
+        "service_tzewxhe",
+        "template_kgzkuf7",
+        templateParams,
+        "CdAGLGtmzWXYwmsz7"
+      )
+      .then(
+        (result) => {
+          console.log("Email sent successfully:", result.text);
+          alert("Message sent successfully!");
+        },
+        (error) => {
+          console.log("Error sending email:", error.text);
+          alert("Failed to send message. Please try again.");
+        }
+      )
+      .finally(() => {
+        setLoading(false); // Stop loading animation
+        // Clear the form after submission
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      });
+  };
+
   return (
     <div
       id="contact"
@@ -23,46 +136,18 @@ export const Contact = () => {
                 transition={{ duration: 0.5 }}
                 className="left p-5"
               >
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={handleSubmit}>
                   {["Name", "Email", "Subject", "Message"].map(
                     (placeholder, index) => (
-                      <InView key={index} triggerOnce>
-                        {({ ref, inView }) => (
-                          <>
-                            {placeholder === "Message" ? (
-                              <motion.textarea
-                                ref={ref}
-                                placeholder={placeholder}
-                                rows="10"
-                                className="w-full p-4 border border-gray-300 text-black rounded-lg outline-none focus:border-primaryColor"
-                                aria-label={placeholder}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={inView ? { opacity: 1, y: 0 } : {}}
-                                transition={{
-                                  duration: 0.5,
-                                  delay: index * 0.2,
-                                }}
-                              />
-                            ) : (
-                              <motion.input
-                                ref={ref}
-                                placeholder={placeholder}
-                                type={
-                                  placeholder === "Email" ? "email" : "text"
-                                }
-                                className="w-full p-4 border border-gray-300 text-black rounded-lg outline-none focus:border-primaryColor"
-                                aria-label={placeholder}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={inView ? { opacity: 1, y: 0 } : {}}
-                                transition={{
-                                  duration: 0.5,
-                                  delay: index * 0.2,
-                                }}
-                              />
-                            )}
-                          </>
-                        )}
-                      </InView>
+                      <InputField
+                        key={index}
+                        placeholder={placeholder}
+                        index={index}
+                        type={placeholder === "Email" ? "email" : "text"}
+                        name={placeholder.toLowerCase()}
+                        value={formData[placeholder.toLowerCase()]}
+                        onChange={handleChange}
+                      />
                     )
                   )}
                   <InView triggerOnce>
@@ -74,8 +159,9 @@ export const Contact = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={inView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.5, delay: 0.8 }}
+                        disabled={loading} // Disable button when loading
                       >
-                        Submit
+                        {loading ? "Sending..." : "Submit"}
                       </motion.button>
                     )}
                   </InView>
@@ -83,28 +169,6 @@ export const Contact = () => {
               </motion.div>
             )}
           </InView>
-
-          <div className="flex flex-col sm:flex-row justify-between p-5 leading-7">
-            {contact.map((val, i) => (
-              <InView triggerOnce={false} key={i}>
-                {({ ref, inView }) => (
-                  <motion.div
-                    ref={ref}
-                    initial={{ opacity: 0, x: -30 }}
-                    animate={inView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.5, delay: i * 0.2 }}
-                    className="box flex items-start space-x-3 mb-4 sm:mb-0"
-                  >
-                    <i className="text-primaryColor text-2xl">{val.icon}</i>
-                    <div>
-                      <p className="text-gray-400">{val.text1}</p>
-                      <p className="text-gray-400">{val.text2}</p>
-                    </div>
-                  </motion.div>
-                )}
-              </InView>
-            ))}
-          </div>
         </div>
       </div>
     </div>
