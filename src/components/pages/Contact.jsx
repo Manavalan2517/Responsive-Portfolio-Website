@@ -58,6 +58,19 @@ export const Contact = () => {
   });
   const [loading, setLoading] = useState(false); // For loading state
 
+  const contactInfo = [
+    {
+      icon: "📧",
+      text1: "Email",
+      text2: "vmanavalan2517@gmail.com",
+    },
+    {
+      icon: "📞",
+      text1: "Phone",
+      text2: "+91 6374212046",
+    },
+  ];
+
   // Handle form data change
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -125,7 +138,6 @@ export const Contact = () => {
     >
       <div className="container w-full max-w-4xl">
         <Heading title="Keep in Touch" />
-
         <div className="content space-y-10">
           <InView triggerOnce={false}>
             {({ ref, inView }) => (
@@ -169,6 +181,21 @@ export const Contact = () => {
               </motion.div>
             )}
           </InView>
+        </div>
+        {/* Contact Information Section */}
+        <div className="contact-info flex justify-center items-center space-x-5 text-center mt-5">
+          {contactInfo.map((info, index) => (
+            <div
+              key={index}
+              className="contact-item flex items-center justify-center space-x-3"
+            >
+              <span className="text-3xl">{info.icon}</span>
+              <div className="text-left">
+                <p className="font-semibold">{info.text1}</p>
+                <p>{info.text2}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
