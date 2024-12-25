@@ -46,9 +46,11 @@ export const Hero = () => {
           >
             {val.desc}
           </motion.p>
-          <button className="transition ease-in-out transform hover:-translate-y-1 hover:scale-105 duration-300 primaryBtn bg-primaryColor border-2 border-primaryColor hover:cursor-pointer text-white px-6 py-3 rounded-xl">
-            Download CV
-          </button>
+          <a href="https://docs.google.com/document/d/15Y1Hti4bcWm9cYVZaN0c1r1keJjLFkbG/edit?usp=sharing&ouid=115154159951712389638&rtpof=true&sd=true">
+            <button className="transition ease-in-out transform hover:-translate-y-1 hover:scale-105 duration-300 primaryBtn bg-primaryColor border-2 border-primaryColor hover:cursor-pointer text-white px-6 py-3 rounded-xl">
+              Download CV
+            </button>
+          </a>
         </div>
       ))}
     </div>
